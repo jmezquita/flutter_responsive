@@ -77,30 +77,45 @@ final ScrollController _scrollControllerEmailBody =ScrollController();
     Container(
       margin: const EdgeInsets.only(left: 5, right: 10),
       //margin: const EdgeInsets.only(top: 5.0, left: 10.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          _header,
-        SingleChildScrollView(
-                  controller: _scrollControllerEmailBody,
-                   // physics: const NeverScrollableScrollPhysics(),
-          reverse: true,
-          physics: const ClampingScrollPhysics(),
-            child: RichText(
-              textAlign: TextAlign.justify,
-              text: TextSpan(
-                children:  <TextSpan>[
-              TextSpan(text: email.mensaje,
-                style: const TextStyle(fontSize: 16, color: Colors.black54),)
-                ]
+
+
+
+      child:  SingleChildScrollView(
+                    controller: _scrollControllerEmailBody,
+                                  physics: const ClampingScrollPhysics(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            _header,
+         
+                     // physics: const NeverScrollableScrollPhysics(),
+            //reverse: true,
+            //physics: const ClampingScrollPhysics(),
+
+               Text(
+                email.mensaje,
+                textAlign: TextAlign.justify,
+                style: const TextStyle(fontSize: 16, color: Colors.black54),
+              )
+              
+              /*
+              RichText(
+                textAlign: TextAlign.justify,
+                text: TextSpan(
+                  children:  <TextSpan>[
+                TextSpan(text: email.mensaje,
+                  style: const TextStyle(fontSize: 16, color: Colors.black54),)
+                  ]
   
+                ),
+                // TextSpan(text: ' world!'),
               ),
-              // TextSpan(text: ' world!'),
-            ),
-          ),
-        ],
+            */
+
+          ],
+        ),
       ),
     );
   }

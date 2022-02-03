@@ -98,27 +98,37 @@ class _HomeDesktopState extends State<HomeDesktop> {
           ],
         ),
         bottomNavigationBar: Theme(
-          
             data: Theme.of(context).copyWith(
-                canvasColor: const Color(0xFF125F48), 
-                primaryColor: Colors.purple, 
-                backgroundColor: const Color(0xFF125F48)
-                ),
-                
-     child: Container(
-                       color: const Color(0xFF125F48),
+                canvasColor: const Color(0xFF125F48),
+                primaryColor: Colors.purple,
+                backgroundColor: const Color(0xFF125F48)),
+            child: Container(
+              color: const Color(0xFF125F48),
               child: Container(
                 margin: const EdgeInsets.only(left: 10),
-
                 height: 30,
-                child: Row(children: <Widget>[
-                  Text("Personas ${_personas.length}", style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-                  Text("Total Emails $_total", style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  Text("Leidos $_leidos", style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  Text("No leidos ${_total - _leidos}", style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))
-                ]),
+                child: Row(
+                   // crossAxisAlignment: CrossAxisAlignment.baseline,
+                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Text(
+                        "Personas: ${_personas.length}",
+                        style: const TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      Text("Total Emails: $_total",
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold)),
+                      Text("Leidos: $_leidos",
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold)),
+                      Text("No leidos: ${_total - _leidos}",
+                          style: const TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold))
+                    ]),
               ),
-        )
-            ));
+            )));
   }
 }
